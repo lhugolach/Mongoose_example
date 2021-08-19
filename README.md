@@ -1,5 +1,5 @@
-# Mongoose_example
-Questo esempio sfrutta la libreria Mongoose in Node.js.
+# Esempio Mongoose
+Questo esempio sfrutta la libreria **Mongoose** in Node.js.
 
 Mongoose è una libreria di programmazione JavaScript orientata agli oggetti che crea una connessione tra MongoDB e il framework dell'applicazione web Express.
 
@@ -8,15 +8,15 @@ Può essere affiancata a framework front-end come Angual, React, etc.
 # Installazione
 Con il seguente comando da terminale, specifico per Node, verranno scaricate tutte le dipendenze elencate in `package.json`:
 ```bash
-npm install
+$ npm install
 ```
 Al termine del download, basterà avviare il progetto sempre tramite Node:
 ```bash
-npm start
+$ npm start
 ```
 O in alternativa:
 ```bash
-node server.js
+$ node server.js
 ```
 In entrambi modi verrà avviato automaticamente il main file `server.js`, che metterà il servizio API, in ascolto sulla porta `5000` 
 
@@ -62,7 +62,7 @@ Nel dettaglio:
         });
         ```
 
-    - il servizio sfrutta il meccanismo `CORS` (Cross-Origin Resource Sharing) attraverso l'omonima dipendenza
+    - il servizio sfrutta il meccanismo **CORS** (Cross-Origin Resource Sharing) attraverso l'omonima dipendenza
 
         ```js
         const cors = require('cors');
@@ -71,7 +71,7 @@ Nel dettaglio:
         ```
 
 - all'interno di `model/` troviamo i modelli che disegneranno e tipizzeranno la struttura dei dati che desideriamo inserire all'interno del database di MongoDB
-- in `middleware/` troviamo il file che contengono le `CRUD` (Create, Read, Update, Delete) per ogni rispettivo model.
+- in `middleware/` troviamo il file che contengono le **CRUD** (Create, Read, Update, Delete) per ogni rispettivo model.
   
   I metodi di CRUD vengono richiamati all'interno del file `server.js`, rispettivamente all'interno di ogni specifica root definita con express.js.
   
