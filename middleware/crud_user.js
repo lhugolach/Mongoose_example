@@ -9,6 +9,7 @@ module.exports = {
         });
         try {
             const result = await newUser.save();
+            console.log("Utente creato: ".concat(result.nome, " ", result.cognome));
             return result;
             
         } catch (err) {
@@ -26,9 +27,11 @@ module.exports = {
             let filterName = Object.keys(filter)
             if (filterName !== undefined && filterName.length > 0) {
                 const result = await User.find(filter);
+                console.log(result)
                 return result;
             } else {
                 const result = await User.find();
+                console.log(result)
                 return result
             }
         } catch (err) {
@@ -41,7 +44,6 @@ module.exports = {
 
     updateUser: async (req) => {
         let user = req.body
-        console.log(user)
         const editUser = {
             _id: user._id,
             nome: user.nome,
@@ -51,6 +53,7 @@ module.exports = {
             let filter = {_id: user._id}
             const result = await User.findByIdAndUpdate(filter, editUser)
             if (result !== undefined) {
+                console.log("Modificato utente con id: ".concat(user._id))
                 return editUser
             }
             return result;
@@ -67,6 +70,7 @@ module.exports = {
         let user = req.body
         try {
           await User.deleteOne({ _id: user._id });
+          console.log("Eliminato utente con id: ".concat(user._id))
           return user._Id;
         } catch (err) {
             let error = {

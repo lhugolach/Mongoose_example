@@ -1,7 +1,7 @@
 # Esempio Mongoose
 Questo esempio sfrutta la libreria **Mongoose** in Node.js.
 
-Mongoose è una libreria di programmazione JavaScript orientata agli oggetti che crea una connessione tra MongoDB e il framework dell'applicazione web Express.
+Mongoose è una libreria JavaScript orientata agli oggetti che crea una connessione tra MongoDB e il framework dell'applicazione web Express.
 
 Può essere affiancata a framework front-end come Angual, React, etc.
 
@@ -66,8 +66,10 @@ Nel dettaglio:
 
         ```js
         const cors = require('cors');
-        app.use(cors());
-        });
+        const allowedOrigins = ['http://localhost:5000'];
+        app.use(cors({
+            origin: allowedOrigins
+        }));
         ```
 
 - all'interno di `model/` troviamo i modelli che disegneranno e tipizzeranno la struttura dei dati che desideriamo inserire all'interno del database di MongoDB

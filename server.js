@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const app = express();
 const cors = require('cors');
 const User = require('./middleware/crud_user');
+const allowedOrigins = ['http://localhost:5000'];
 
-const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins
+}));
 
 mongoose.connect('mongodb://localhost:27017/mongo-test', 
 { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(res => {
